@@ -7,5 +7,5 @@ pipeline:
   docker:
     image: plugins/docker
     secrets: [ docker_hub_username, docker_hub_password ]
-    repo: harriswan9a/drone-ftps
+    repo: hwan9/drone-ftps
     tags: latest
