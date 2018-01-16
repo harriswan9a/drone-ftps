@@ -1,0 +1,11 @@
+clone:
+  git:
+    image: plugins/git
+    depth: 50
+    tags: true
+pipeline:
+  docker:
+    image: plugins/docker
+    secrets: [ docker_hub_username, docker_hub_password ]
+    repo: harriswan9a/drone-ftps
+    tags: latest
