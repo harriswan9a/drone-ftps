@@ -6,6 +6,10 @@ clone:
 pipeline:
   docker:
     image: plugins/docker
+    pull: true
     secrets: [ docker_hub_username, docker_hub_password ]
     repo: hwan9/drone-ftps
-    tags: latest
+    default_tags: true
+    when:
+      event: [ push, tag ]
+      local: false
