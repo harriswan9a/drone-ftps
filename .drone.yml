@@ -7,6 +7,7 @@ pipeline:
   docker:
     image: plugins/docker
     pull: true
+    dockerfile: Dockerfile
     secrets: [ docker_hub_username, docker_hub_password ]
     repo: hwan9/drone-ftps
     default_tags: true
