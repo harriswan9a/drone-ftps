@@ -3,9 +3,23 @@ clone:
     image: plugins/git
     depth: 50
     tags: true
+    
 pipeline:
-  docker:
+  publish_latest:
     image: plugins/docker
+    group: release
+    pull: true
+    dockerfile: Dockerfile
+    secrets: [ docker_username, docker_password ]
+    repo: hwan9/drone-ftps
+    tag: [ latest ]
+    when:
+      branch: master
+      event: push
+
+  publish_tags:
+    image: plugins/docker
+    group: release
     pull: true
     dockerfile: Dockerfile
     secrets: [ docker_username, docker_password ]
